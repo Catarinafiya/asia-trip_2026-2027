@@ -1,4 +1,4 @@
-const CACHE='asia-trip-v10-static-1';
+const CACHE='asia-trip-2026-11-12-static-1';
 const FILES=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('asia-trip-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
