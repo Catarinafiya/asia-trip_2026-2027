@@ -1,4 +1,4 @@
-const CACHE='asia-trip-v10-static-indonesia-fix-2';
+const CACHE='asia-trip-v10-static-text-cleanup-3';
 const FILES=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('asia-trip-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
